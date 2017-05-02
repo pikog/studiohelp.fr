@@ -38,7 +38,7 @@ var project = {
   paths: {
     src: './src/', //Work folder
     dest: './dist/', //Final folder
-    styles: {
+    sass: {
       folder: 'assets/css/', //Final css folder
       files: 'assets/sass/**/*.scss', //Files to watch
     },
@@ -90,7 +90,7 @@ function sendError(error) {
 Error handler send notification
 */
 gulp.task('sass', function () {
-  return gulp.src(project.paths.src + project.paths.styles.files)
+  return gulp.src(project.paths.src + project.paths.sass.files)
     .pipe(plumber(project.configuration.plumber))
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
@@ -98,7 +98,7 @@ gulp.task('sass', function () {
     .pipe(cleanCss())
     .pipe(rename(project.configuration.rename))
     .pipe(sourcemaps.write(project.paths.maps))
-    .pipe(gulp.dest(project.paths.dest + project.paths.styles.folder));
+    .pipe(gulp.dest(project.paths.dest + project.paths.sass.folder));
 });
 
 /*
@@ -157,8 +157,8 @@ gulp.task('rebuild', function () {
 gulp.task('default', ['sass', 'js', 'vendors', 'html', 'img', 'fonts', 'extra']);
 
 gulp.task('watch', function () {
-  gulp.watch(project.paths.src + project.paths.styles.files, ['sass']);
-  gulp.watch(project.paths.src + project.paths.scripts.files, ['js']);
+  gulp.watch(project.paths.src + project.paths.sass.files, ['sass']);
+  gulp.watch(project.paths.src + project.paths.js.files, ['js']);
   gulp.watch(project.paths.src + project.paths.vendors.files, ['vendors']);
   gulp.watch(project.paths.src + project.paths.html.files, ['html']);
   gulp.watch(project.paths.src + project.paths.img.files, ['img']);
