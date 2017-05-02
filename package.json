@@ -1,0 +1,20 @@
+{
+  "name": "PikGulp",
+  "version": "1.0.0",
+  "devDependencies": {
+    "gulp": "*",
+    "node-notifier": "*",
+    "gulp-plumber": "*",
+    "gulp-sourcemaps": "*",
+    "gulp-sass": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-clean-css": "*",
+    "gulp-rename": "*",
+    "gulp-include": "*",
+    "gulp-uglify": "*",
+    "gulp-html-extend": "*",
+    "gulp-imagemin": "*",
+    "run-sequence": "*",
+    "del": "*"
+  }
+}
