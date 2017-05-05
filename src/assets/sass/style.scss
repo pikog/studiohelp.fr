@@ -2,6 +2,8 @@
 @import 'reset';
 @import 'config';
 
-body {
+@import '_default';
+@import '_header';
 
-}
+@import '_mainPage';
+@import '_works';

@@ -1,0 +1,39 @@
+header#header {
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .logo {
+    height: 110px;
+    img {
+      height: 100%;
+    }
+  }
+  .menu {
+    position: relative;
+    top: 5px;
+    ul {
+      display: flex;
+
+      li {
+        display: inline-block;
+        a {
+          display: inline-block;
+          padding: 10px 20px;
+          margin: 0 30px;
+          text-transform: uppercase;
+          text-decoration: none;
+          color: #fff;
+          font-size: $font-size-menu;
+          font-weight: $font-regular;
+        }
+        &:last-of-type a {
+          margin-right: 0;
+        }
+        &:first-of-type a {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
