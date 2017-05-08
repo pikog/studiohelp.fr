@@ -1,8 +1,31 @@
-html, body {
+$hamburger-types: (squeeze);
+$hamburger-layer-color: #fff;
+
+html {
+  font-size:100%;
+}
+
+html,
+body {
   height: 100%;
 }
 
 body {
   font-family: $font-family-main;
   font-size: $font-size-base;
+  background: #000;
+}
+
+.content {
+  display: flex;
+  height: 100%;
+}
+
+@media only screen and (max-width: 850px) {
+  html {
+    font-size: 62%;
+  }
+  .content {
+    flex-direction: column;
+  }
 }

@@ -1,25 +1,62 @@
-$(function() {
-
+$(function () {
+  'use strict';
   var options = {
-    onStart: {
-      duration: 250, // Duration of our animation
-      render: function ($container) {
-        // Add your CSS animation reversing class
-        $container.addClass('is-exiting');
+      prefetch: true,
+      cacheLength: 2,
+      debug: true,
+      onStart: {
+        duration: 150,
+        render: function ($container) {
+          $container.addClass('is-exiting');
+          smoothState.restartCSSAnimations();
+        }
+      },
+      onReady: {
+        duration: 0,
+        render: function ($container, $newContent) {
+          $container.removeClass('is-exiting');
+          $container.html($newContent);
+        }
+      },
+      onAfter: function($container, $newContent) {
+        init();
       }
     },
-    onReady: {
-      duration: 0,
-      render: function ($container, $newContent) {
-        console.log("prout");
-        $container.removeClass('is-exiting');
-
-        // Inject the new content
-        $container.html($newContent);
-
-      }
-    }
-  };
-
-  $('#smoothStateContent').smoothState(options);
+    smoothState = $('#smoothStateContent').smoothState(options).data('smoothState');
 });
+
+$(document).ready(function () {
+  init();
+});
+
+function init() {
+  $(window).on('resize', function () {
+    setVideoSize();
+    if ($(window).width() >= 850) {
+      $('button.hamburger').removeClass('is-active');
+      $('nav.menu').css('display', 'flex');
+    }
+    else if (!$('button.hamburger').hasClass('is-active')) {
+      $('nav.menu').css('display', 'none');
+    }
+  });
+  $('button.hamburger').on('click', function () {
+    if ($(this).hasClass('is-active')) {
+      $(this).removeClass('is-active');
+      $('nav.menu').css('display', 'none');
+    }
+    else {
+      $(this).addClass('is-active');
+      $('nav.menu').css('display', 'flex');
+    }
+  });
+  $('video').on('loadeddata', function() {
+    $('video').show();
+  });
+  setVideoSize();
+}
+function setVideoSize() {
+  var video = $('video');
+  video.attr('height', $(document).height());
+  video.attr('width', $(document).width());
+}

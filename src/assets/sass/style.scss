@@ -2,8 +2,12 @@
 @import 'reset';
 @import 'config';
 
+@import 'hamburgers/hamburgers';
+
+@import '_animate';
 @import '_default';
 @import '_header';
+@import '_main';
 
 @import '_mainPage';
 @import '_works';

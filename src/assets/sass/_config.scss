@@ -3,8 +3,8 @@ $color-primary: #fff !default;
 $color-secondary: #fff !default;
 
 /* Fonts */
-$font-family-main: 'Helvetica', 'Open Sans', Arial, sans-serif !default;
-$font-family-title: Arial, sans-serif !default;
+$font-family-main: 'Open Sans', Arial, sans-serif !default;
+$font-family-title: 'Roboto Condensed', Arial, sans-serif !default;
 
 $font-regular: 400!default;
 $font-semi-bold: 600!default;
@@ -13,3 +13,12 @@ $font-bold: 700!default;
 $font-size-base: 1rem !default;
 $font-size-small: .75rem !default;
 $font-size-menu: 1.5rem !default;
+
+$hamburger-types: (squeeze);
+$hamburger-layer-color: #fff;
+$hamburger-padding-x: 15px;
+$hamburger-padding-y: 15px;
+$hamburger-layer-width: 30px;
+$hamburger-layer-height: 3px;
+$hamburger-layer-spacing: 6px;
+$hamburger-layer-border-radius: 0px;
