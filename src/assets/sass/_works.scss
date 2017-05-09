@@ -1,11 +1,63 @@
 .works {
   background-image: url(../img/background_works.jpeg);
   animation: fadeIn 150ms ease-in;
+  display: flex;
+  .itemWork {
+    flex: 1;
+    transition: flex 500ms ease-in-out;
+    background: {
+      image: url(../img/work_1.jpg);
+      size: cover;
+      position: center;
+    }
+    &:nth-child(2) {
+      background-image: url(../img/work_2.jpg);
+    }
+    &:nth-child(3) {
+      background: {
+        image: url(../img/work_3.jpg);
+        position-x: -700px;
+      }
+    }
+    &:hover {
+      flex: 1.2;
+    }
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      text-decoration: none;
+      font-size: 70px;
+      &:hover {
+        background: transparentize(#fff, 0.6);
+        span {
+          display: inline;
+        }
+      }
+      span {
+        display: none;
+        position: absolute;
+        top: 200px;
+        left: 90px;
+      }
+    }
+  }
 }
 
 .content.is-exiting {
   .works {
-    animation: fadeOut 150ms ease-in;
-    animation-fill-mode: forwards;
+    .itemWork {
+      a:hover {
+        background: transparent;
+        span {
+          display: none;
+        }
+      }
+      &:nth-child(2), &:nth-child(3) {
+        animation: flex 300ms linear;
+        animation-fill-mode: forwards;
+      }
+    }
   }
 }

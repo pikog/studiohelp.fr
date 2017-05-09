@@ -15,3 +15,12 @@
     opacity: 0;
   }
 }
+
+@keyframes flex {
+  0% {
+    flex: 1;
+  }
+  100% {
+    flex: 0;
+  }
+}

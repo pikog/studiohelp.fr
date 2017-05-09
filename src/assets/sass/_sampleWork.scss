@@ -1,0 +1,13 @@
+.sampleWork {
+  background-image: url(../img/work_1.jpg);
+  /*animation: fadeIn 150ms ease-in;*/
+  &.work1 {
+    background-image: url(../img/work_1.jpg);
+  }
+  &.work2 {
+    background-image: url(../img/work_2.jpg);
+  }
+  &.work3 {
+    background-image: url(../img/work_3.jpg);
+  }
+}
