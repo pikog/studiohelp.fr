@@ -29,10 +29,3 @@
     }
   }
 }
-
-.content.is-exiting {
-  .mainPage {
-    animation: fadeOut 150ms ease-in;
-    animation-fill-mode: forwards;
-  }
-}

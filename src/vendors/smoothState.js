@@ -107,7 +107,7 @@
       /** Run when a page load has been activated */
       onStart: {
         duration: 0,
-        render: function ($container, animationNameBefore, animationDuration, animationAnchor) {}
+        render: function ($container, animationNameBefore, animationNameAfter, animationDuration, animationAnchor) {}
       },
 
       /** Run if the page request is still pending and onStart has finished animating */
@@ -119,7 +119,7 @@
       /** Run when requested content is ready to be injected into the page  */
       onReady: {
         duration: 0,
-        render: function ($container, $newContent, animationNameAfter) {
+        render: function ($container, $newContent, animationNameBefore, animationNameAfter, animationDuration, animationAnchor) {
           $container.html($newContent);
         }
       },
@@ -479,7 +479,7 @@
             }
 
             // Call the onReady callback and set delay
-            options.onReady.render($container, $newContent, animationNameAfter);
+            options.onReady.render($container, $newContent, animationNameBefore, animationNameAfter, animationDuration, animationAnchor);
 
             $container.one('ss.onReadyEnd', function(){
 
@@ -622,7 +622,7 @@
           }
 
           // Run the onStart callback and set trigger
-          options.onStart.render($container, animationNameBefore, animationDuration, animationAnchor);
+          options.onStart.render($container, animationNameBefore, animationNameAfter, animationDuration, animationAnchor);
 
           window.setTimeout(function(){
             if (options.scroll) {
@@ -678,8 +678,8 @@
 
               // Allows modifications to the request
               request = options.alterRequest(request);
-              animationNameBefore = $anchor.attr('data-animation-name-before');
-              animationNameAfter = $anchor.attr('data-animation-name-after');
+              animationNameBefore = $anchor.attr('data-animation-before');
+              animationNameAfter = $anchor.attr('data-animation-after');
               if(!isNaN(parseInt($anchor.attr('data-animation-duration')))){
                 animationDuration = parseInt($anchor.attr('data-animation-duration'));
               }

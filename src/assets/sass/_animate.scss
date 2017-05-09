@@ -24,3 +24,18 @@
     flex: 0;
   }
 }
+
+.content {
+  &.exiting-fade {
+    main {
+      animation: fadeOut 150ms ease-in;
+      animation-fill-mode: forwards;
+    }
+  }
+  &.enter-fade {
+    main {
+      animation: fadeIn 150ms ease-in;
+      animation-fill-mode: forwards;
+    }
+  }
+}

@@ -6,17 +6,11 @@ $(function () {
       debug: true,
       onStart: {
         duration: 150,
-        render: function ($container, animationNameBefore, animationDuration, animationAnchor) {
-          $container.addClass('is-exiting');
-          smoothState.restartCSSAnimations();
-        }
+        render: onStartAnimation
       },
       onReady: {
         duration: 0,
-        render: function ($container, $newContent, animationNameAfter) {
-          $container.removeClass('is-exiting');
-          $container.html($newContent);
-        }
+        render: onReadyAnimation
       },
       onAfter: function ($container, $newContent) {
         init();
@@ -59,5 +53,17 @@ $(function () {
     var video = $('video');
     video.attr('height', $(document).height());
     video.attr('width', $(document).width());
+  }
+
+  function onStartAnimation($container, animationNameBefore, animationNameAfter, animationDuration, animationAnchor) {
+    $container.attr('class', 'content');
+    $container.addClass('exiting-' + animationNameBefore);
+    smoothState.restartCSSAnimations();
+  }
+
+  function onReadyAnimation($container, $newContent, animationNameBefore, animationNameAfter, animationDuration, animationAnchor) {
+    $container.removeClass('exiting-' + animationNameBefore);
+    $container.html($newContent);
+    $container.addClass('enter-' + animationNameAfter);
   }
 });
