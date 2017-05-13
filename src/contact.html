@@ -48,19 +48,22 @@
         </div>
       </div>
       <div class="form">
-        <form action="contact.php" method="post">
+        <form action="contact.php" method="post" id="form">
           <div>
             <input type="text" id="prenom" name="prenom" placeholder="Prénom" />
             <input type="text" id="nom" name="nom" placeholder="Nom" />
           </div>
           <div>
-            <input type="text" id="mail" name="mail" placeholder="Adresse mail" />
+            <input type="email" id="mail" name="mail" placeholder="Adresse mail" />
           </div>
           <div>
-            <input type="text" id="objet" name="objet" placeholder="Objet" />
+            <input type="text" id="objet" name="objet" placeholder="Objet" class="error" />
           </div>
           <div>
-            <textarea rows="4" cols="50" id="message" name="message">Message</textarea>
+            <textarea rows="10" cols="50" id="message" name="message" placeholder="Message"></textarea>
+          </div>
+          <div>
+            <button type="submit" form="form" class="button">Envoyer</button>
           </div>
         </form>
       </div>
