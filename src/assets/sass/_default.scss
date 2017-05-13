@@ -1,6 +1,5 @@
 $hamburger-types: (squeeze);
 $hamburger-layer-color: #fff;
-
 html {
   font-size: 16px;
 }
@@ -14,11 +13,60 @@ body {
   font-family: $font-family-main;
   font-size: $font-size-base;
   background: #000;
+  font-weight: $font-light;
 }
 
 .content {
   display: flex;
   height: 100%;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 25px;
+  color: #fff;
+  background: #E72E4E;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 250ms ease-in-out;
+  font-weight: $font-regular;
+  &:hover {
+    background: #fff;
+    color: #E72E4E;
+  }
+}
+
+main {
+  .button {
+    display: inline-block;
+    padding: 12px 25px;
+    color: #fff;
+    background: #E72E4E;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 250ms ease-in-out;
+    font-weight: $font-regular;
+    &:hover {
+      background: #fff;
+      color: #E72E4E;
+    }
+  }
+  a {
+    text-decoration: underline;
+    color: #E72E4E;
+    transition: all 150ms ease-in-out;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  html {
+    font-size: 80%;
+  }
 }
 
 @media only screen and (max-width: 850px) {

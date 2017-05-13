@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>StudioHelp - Stade Français</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Roboto+Condensed:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="vendors/audio.min.css" media="all">
+  <link rel="stylesheet" href="assets/css/style.min.css" media="all">
+</head>
+
+<body>
+
+  <div id="smoothStateContent" class="content">
+    <header>
+      <div class="responsiveHeader">
+        <div class="logo">
+          <a href="index.html" title="Accueil" data-animation-duration="150" data-animation-before="fade" data-animation-after="fade"><img src="assets/img/logo_red.png" alt="StudioHelp" /></a>
+        </div>
+        <button class="hamburger hamburger--squeeze" type="button">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+      </div>
+      <nav class="menu">
+        <ul>
+          <li><a href="index.html" title="Accueil" data-animation-duration="150" data-animation-before="fade" data-animation-after="fade">Accueil</a></li>
+          <li class="selected"><a href="realisations.html" title="Réalisation" data-animation-duration="150" data-animation-before="fade" data-animation-after="fade">Réalisations</a></li>
+          <li><a href="instruments.html" title="Instruments" data-animation-duration="150" data-animation-before="fade" data-animation-after="fade">Instruments</a></li>
+          <li><a href="#" title="À propos" data-animation-duration="150" data-animation-before="fade">À propos</a></li>
+          <li><a href="#" title="Contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="contact">
+      <div class="infos">
+        <div class="infoBlock phone">
+          <a href="tel:0764076029">07 64 07 60 29</a>
+        </div>
+        <div class="infoBlock mail">
+          <a href="mailto:contact@studiohelp.fr" title="Envoyer un mail à contact@studiohelp.fr">contact@studiohelp.fr</a>
+        </div>
+        <div class="infoBlock adress">
+          <a href="https://www.google.com/maps/place/Rue+Paul+Gauguin,+91600+Savigny-sur-Orge,+France">rue Paul Gauguin<br/>
+          91600 Savigny-sur-Orge</a>
+        </div>
+      </div>
+      <div class="form">
+        <form action="contact.php" method="post">
+          <div>
+            <input type="text" id="prenom" name="prenom" placeholder="Prénom" />
+            <input type="text" id="nom" name="nom" placeholder="Nom" />
+          </div>
+          <div>
+            <input type="text" id="mail" name="mail" placeholder="Adresse mail" />
+          </div>
+          <div>
+            <input type="text" id="objet" name="objet" placeholder="Objet" />
+          </div>
+          <div>
+            <textarea rows="4" cols="50" id="message" name="message">Message</textarea>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="vendors/smoothState.js"></script>
+  <script src="vendors/audio.min.js"></script>
+  <script src="assets/js/main.min.js"></script>
+</body>
+
+</html>

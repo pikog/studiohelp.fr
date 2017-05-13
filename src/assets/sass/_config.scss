@@ -6,14 +6,15 @@ $color-secondary: #fff !default;
 $font-family-main: 'Open Sans', Arial, sans-serif !default;
 $font-family-title: 'Roboto Condensed', Arial, sans-serif !default;
 
+$font-light: 300!default;
 $font-regular: 400!default;
 $font-semi-bold: 600!default;
 $font-bold: 700!default;
 
 $font-size-base: 1rem !default;
 $font-size-small: .75rem !default;
-$font-size-menu: 2.0625em !default;
-$font-size-main: 2.0625em !default;
+$font-size-menu: 2.188rem !default;
+$font-size-main: 2.0625rem !default;
 
 $hamburger-types: (squeeze);
 $hamburger-layer-color: #fff;

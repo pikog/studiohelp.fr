@@ -66,7 +66,7 @@ var project = {
     },
     extra: {
       folder: '', //Final extra folder
-      files: '**/*.{ico,htaccess,txt,php,json,mp4,mp3}', //Files to watch
+      files: '**/*.{ico,htaccess,txt,php,json,mp4,mp3,wav,ogg}', //Files to watch
     },
     maps: '/maps', //Sourcemaps folder
   }

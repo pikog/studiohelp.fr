@@ -1,5 +1,7 @@
 .sampleWork {
+  overflow: auto;
   background-image: url(../img/work_1.jpg);
+  display: flex;
   &.work1 {
     background-image: url(../img/work_1.jpg);
   }
@@ -8,5 +10,76 @@
   }
   &.work3 {
     background-image: url(../img/work_3.jpg);
+  }
+  .infoBlock,
+  .side {
+    flex: 1
+  }
+  .infoBlock {
+    padding: 50px;
+    animation: fadeIn 150ms ease-in;
+    article {
+      background: transparentize(#fff, 0.2);
+      .headImg {
+        height: 185px;
+        background: {
+          image: url(../img/work_1.jpg);
+          size: cover;
+          position: center;
+        }
+      }
+      .container {
+        padding: 65px;
+        h2 {
+          font-size: 1.500rem;
+          font-weight: $font-bold;
+          text-transform: uppercase;
+          margin-bottom: 30px;
+        }
+        p {
+          text-align: justify;
+          margin-bottom: 30px;
+          line-height: 1.2;
+        }
+      }
+    }
+  }
+  .side {
+    animation: fadeIn 150ms ease-in;
+    padding: 50px 10px;
+    color: transparentize(#fff, 0.8);
+    font-family: $font-family-title;
+    font-weight: $font-bold;
+    font-size: 4.375em;
+    text-transform: uppercase;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .sampleWork {
+    flex-direction: column;
+    .side {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .sampleWork {
+    flex-direction: column;
+    .side {
+      display: none;
+    }
+    .infoBlock {
+      padding: 20px;
+      article {
+        .headImg {
+          height: 100px;
+        }
+        .container {
+          padding: 25px;
+        }
+      }
+    }
   }
 }

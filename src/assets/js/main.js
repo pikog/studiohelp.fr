@@ -32,7 +32,10 @@ $(function () {
       else if (!$('button.hamburger').hasClass('is-active')) {
         $('nav.menu').css('display', 'none');
       }
+
+      $('.instruments .instru').css('height', $('.instruments .instru').first().css('width'));
     });
+
     $('button.hamburger').on('click', function () {
       if ($(this).hasClass('is-active')) {
         $(this).removeClass('is-active');
@@ -46,7 +49,19 @@ $(function () {
     $('video').on('loadeddata', function () {
       $('video').show();
     });
+
     setVideoSize();
+
+    $('.itemWork:nth-of-type(1) a').hover(
+      function () {
+        $('.works h2').css('opacity', 0);
+        console
+      },
+      function () {
+        $('.works h2').css('opacity', 1);
+      }
+    );
+    $('audio').audioPlayer();
   }
 
   function setVideoSize() {

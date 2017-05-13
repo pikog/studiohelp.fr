@@ -1,0 +1,62 @@
+.about {
+  overflow: auto;
+  background-image: url(../img/background_about.jpg);
+  display: flex;
+  .infos,
+  .side {
+    flex: 1
+  }
+  .infos {
+    padding: 50px;
+    .infoBlock {
+      background: transparentize(#fff, 0.2);
+      margin-bottom: 30px;
+      padding: 40px;
+      h2 {
+        font-size: 1.500rem;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+      }
+      p {
+        text-align: justify;
+        line-height: 1.2;
+      }
+      &:last-of-type {
+        margin-bottom: 0px;
+      }
+      .buttonContainer {
+        text-align: center;
+        margin-top: 25px;
+      }
+    }
+  }
+  .side {
+    padding: 50px 10px;
+    color: transparentize(#fff, 0.8);
+    font-family: $font-family-title;
+    font-weight: $font-bold;
+    font-size: 4.375em;
+    text-transform: uppercase;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .about {
+    flex-direction: column;
+    .side {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .about {
+    flex-direction: column;
+    .infos {
+      padding: 20px;
+      .infoBlock {
+        padding: 25px;
+      }
+    }
+  }
+}

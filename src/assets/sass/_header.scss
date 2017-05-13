@@ -26,7 +26,7 @@ header {
         display: block;
         a {
           display: block;
-          padding: 5px 0px;
+          padding: 2px 0px;
           text-transform: uppercase;
           text-decoration: none;
           color: #fff;
@@ -44,6 +44,12 @@ header {
   }
   .hamburger {
     display: none;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  header {
+    width: 245px;
   }
 }
 

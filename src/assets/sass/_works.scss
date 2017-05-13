@@ -2,6 +2,18 @@
   background-image: url(../img/background_works.jpeg);
   animation: fadeIn 150ms ease-in;
   display: flex;
+  h2 {
+    position: absolute;
+    z-index: 20;
+    color: transparentize(#fff, 0.8);
+    font-family: $font-family-title;
+    font-weight: $font-bold;
+    font-size: 4.375em;
+    text-transform: uppercase;
+    top: 10px;
+    left: 10px;
+    transition: opacity 150ms ease-in;
+  }
   .itemWork {
     flex: 1;
     transition: flex 500ms ease-in-out;
@@ -10,13 +22,12 @@
       size: cover;
       position: center;
     }
-    &:nth-child(2) {
+    &:nth-of-type(2) {
       background-image: url(../img/work_2.jpg);
     }
-    &:nth-child(3) {
+    &:nth-of-type(3) {
       background: {
         image: url(../img/work_3.jpg);
-        position-x: -700px;
       }
     }
     &:hover {
@@ -28,27 +39,59 @@
       height: 100%;
       position: relative;
       text-decoration: none;
-      font-size: 70px;
+      font-family: $font-family-title;
+      font-weight: $font-bold;
+      font-size: 4.375em;
+      text-transform: uppercase;
+      color: transparentize(#fff, 0.3);
+      opacity: 0;
+      transition: opacity 150ms ease-in;
       &:hover {
         background: transparentize(#fff, 0.6);
+        opacity: 1;
         span {
           display: inline;
         }
       }
       span {
+        max-width: 310px;
         display: none;
         position: absolute;
-        top: 200px;
-        left: 90px;
+        top: 20%;
+        left: 50px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .works {
+    flex-direction: column;
+    .itemWork {
+      a {
+        span {
+          top: 50%;
+          left: 10%;
+          transform: translateY(-50%);
+        }
       }
     }
   }
 }
 
 .content {
+  &.exiting-extend-1,
+  &.exiting-extend-2,
+  &.exiting-extend-3 {
+    .itemWork a {
+      animation: fadeOut 250ms ease-in;
+      animation-fill-mode: forwards;
+    }
+  }
   &.exiting-extend-1 {
     .itemWork {
-      &:nth-child(2), &:nth-child(3) {
+      &:nth-of-type(2),
+      &:nth-of-type(3) {
         animation: flex 500ms ease-in;
         animation-fill-mode: forwards;
       }
@@ -56,7 +99,8 @@
   }
   &.exiting-extend-2 {
     .itemWork {
-      &:nth-child(1), &:nth-child(3) {
+      &:nth-of-type(1),
+      &:nth-of-type(3) {
         animation: flex 500ms ease-in;
         animation-fill-mode: forwards;
       }
@@ -64,7 +108,8 @@
   }
   &.exiting-extend-3 {
     .itemWork {
-      &:nth-child(1), &:nth-child(2) {
+      &:nth-of-type(1),
+      &:nth-of-type(2) {
         animation: flex 500ms ease-in;
         animation-fill-mode: forwards;
       }
